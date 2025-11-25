@@ -26,6 +26,17 @@ body {
   margin-bottom: 1.2rem;
   border: 3px solid #ebebeb;
 }
+/* Video avatar uses same sizing and cropping as image */
+.profile-video {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 48px;
+  margin-bottom: 1.2rem;
+  border: 3px solid #ebebeb;
+  display: inline-block;
+  vertical-align: middle;
+}
 h1 {
   font-size: 2.1rem;
   font-weight: 800;
