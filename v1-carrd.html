@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arsenio Law</title>
+  <meta name="description" content="Legal consulting, strategy, and advocacy by Arsenio Law." />
+  <link rel="preload" href="assets/profile.jpg" as="image" />
+  <style>
+    :root {
+      --bg: #fafbff;
+      --text: #111317;
+      --muted: #6b7280;
+      --accent: #3d65ca;
+      --accent-2: #294bbb;
+      --ring: #e8ebf3;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text); background: radial-gradient(1000px 600px at 100% -10%, #eef2ff, transparent 60%),
+        radial-gradient(800px 500px at -10% 110%, #eff7ff, transparent 60%), var(--bg);
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    }
+
+    .wrap { min-height: 100%; display: grid; place-items: center; padding: 48px 20px; }
+    .stack { width: 100%; max-width: 720px; display: grid; justify-items: center; gap: 16px; }
+
+    .avatar { width: 120px; height: 120px; border-radius: 999px; overflow: hidden; border: 3px solid var(--ring); background: #fff; }
+    .avatar video, .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    h1 { margin: 4px 0 0; font-size: clamp(2rem, 4vw, 2.6rem); letter-spacing: -0.01em; font-weight: 800; }
+    .tagline { margin: 6px 0 2px; color: #4a69c6; font-size: 1.08rem; letter-spacing: .02em; }
+    .lead { margin: 6px 0 0; color: #2b2f36; text-align: center; max-width: 680px; line-height: 1.6; }
+
+    .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+    .btn { display: inline-flex; align-items: center; padding: 12px 22px; border-radius: 999px; font-weight: 600; text-decoration: none; cursor: pointer; }
+    .btn.primary { background: var(--accent); color: #fff; }
+    .btn.primary:hover { background: var(--accent-2); }
+    .btn.secondary { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
+    .btn.secondary:hover { color: #fff; background: var(--accent); border-color: var(--accent); }
+    .btn:focus-visible { outline: none; box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--accent); }
+
+    .socials { display: flex; gap: 14px; margin-top: 4px; }
+    .socials a { color: var(--muted); text-decoration: none; font-weight: 600; }
+    .socials a:hover { color: var(--accent); }
+
+    .sections { width: 100%; max-width: 760px; display: grid; gap: 28px; margin-top: 24px; }
+    section { border-top: 1px solid var(--ring); padding-top: 22px; }
+    section h2 { margin: 0 0 6px; font-size: 1.12rem; letter-spacing: .01em; }
+    section p { margin: 0; line-height: 1.65; color: #374151; }
+
+    footer { text-align: center; color: #9aa3b2; font-size: .95rem; margin-top: 36px; }
+
+    @media (max-width: 520px) {
+      .avatar { width: 100px; height: 100px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .btn { transition: none; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="stack">
+      <div class="avatar">
+        <video src="assets/profile.mp4" poster="assets/profile.jpg" autoplay muted loop playsinline></video>
+      </div>
+      <h1>Arsenio Law</h1>
+      <p class="tagline">Legal Consulting, Strategy & Advocacy</p>
+      <p class="lead">I help clients simplify complexity, assess risk, and achieve practical results with clear, actionable legal guidance tailored to your goals.</p>
+      <nav class="buttons" aria-label="Primary actions">
+        <a class="btn primary" href="#contact">Contact Me</a>
+        <a class="btn secondary" href="#about">Learn More</a>
+      </nav>
+      <nav class="socials" aria-label="Social links">
+        <a href="mailto:contact@example.com">Email</a>
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://x.com" target="_blank" rel="noopener">X</a>
+      </nav>
+    </header>
+
+    <div class="sections">
+      <section id="about" tabindex="-1">
+        <h2>About</h2>
+        <p>With experience across advisory and litigation strategy, I offer practical, business-aligned legal solutions. My work centers on clarity, risk management, and momentum toward outcomes that matter.</p>
+      </section>
+      <section id="contact" tabindex="-1">
+        <h2>Contact</h2>
+        <p>Email <a href="mailto:contact@example.com">contact@example.com</a> with a brief summary and your availability. I’ll reply with next steps.</p>
+      </section>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Arsenio Law. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <script>
+    // Smooth scroll that respects reduced motion
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href').slice(1);
+        if (!id) return;
+        const el = document.getElementById(id);
+        if (!el) return;
+        e.preventDefault();
+        el.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+        el.focus?.({ preventScroll: true });
+      });
+    });
+  </script>
+</body>
+</html>
